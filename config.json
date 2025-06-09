@@ -1,0 +1,5 @@
+{
+	"moodFlag" : false, 
+	"alarmFlag" : true,
+	"alarmTime" : [7, 30]
+}

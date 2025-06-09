@@ -1,0 +1,42 @@
+SoundWire Server Install Instructions for Raspberry Pi / Raspbian
+-----------------------------------------------------------------
+
+Note: This version of SoundWire Server for Raspberry Pi is command line only, 
+no GUI. It is suitable for minimal systems with no desktop manager or older
+Raspberry Pi models (e.g. 1 & 2). For RPi systems running Raspbian Stretch or
+later another option is SoundWire Server for RPi, GUI version. 
+
+System Setup:
+
+- Your Raspberry Pi should be running the Raspbian hard-float OS, not the
+  soft-float build. Hard-float is the normal default.
+
+- If you're running a firewall, open firewall ports 59010 & 59011 UDP. You may 
+  do this from the GUI using firewall-config or a similar utility. 
+
+- Update your package lists to prevent problems below
+     sudo apt-get update
+
+- Install audio-related packages needed by SoundWire (Pulse Audio, Pulse Audio
+  Volume Control, PortAudio)
+     sudo apt-get install pulseaudio
+     sudo apt-get install pavucontrol
+     sudo apt-get install libportaudio2
+
+- Install any other packages needed to satisfy shared library dependencies if 
+  SoundWireServer fails to start. You should run it from the command line to
+  see any error messages. Note that PortAudio usually displays a large number 
+  of errors, so these are suppressed unless you specify the -verbose option when
+  running SoundWireServer.
+
+SoundWire Server Program Installation:
+
+1. Add the directory containing these files to your search path. (You can skip
+   this step if you run SoundWireServer from the command line using the full
+   path.)
+
+2. At this point you can start SoundWire Server from the command line by typing
+   SoundWireServer. 
+
+(Continue with the README.txt file.)
+
